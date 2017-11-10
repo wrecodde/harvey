@@ -1,0 +1,16 @@
+import os
+
+from music import Music
+import sqlite3 as sql
+db=sql.connect("disk.db")
+csr=db.cursor()
+
+rt_dir = "/sdcard/music"
+disk = [file for file in os.listdir(rt_dir) if os.path.isfile(os.path.join(rt_dir,file))]
+
+for file in disk:
+	m=Music(file)
+	csr.execute(f"""INSERT INTO tracks(title, artist, features, filename) VALUES("{m.title}", "{m.artist}", "{m.feat}", "{file}");""")
+print(csr.lastrowid)
+db.commit()
+db.close()

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block page %}
+
+<audio controls>
+	<source src="/play/{{track.uri}}" type="audio/mpeg"/>
+</audio>
+
+{% end block %}
