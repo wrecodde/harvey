@@ -38,7 +38,7 @@ class BaseHandler(tornado.web.RequestHandler):
 
 class MainPage(BaseHandler):
 	def get(self):
-		shuffle = random.sample(box.lib.tracks, 7)
+		shuffle = random.sample(box.lib.tracks, 12)
 		self.render("index.html", tracks=shuffle)
 
 class StreamHandler(BaseHandler):

@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Harvey's Music Player</title>
+	
+	<meta name="viewport" content="width=device-width, scale=1.0"/>
+	
+	<link rel="stylesheet" href="{{ static_url("materialize/css/materialize.min.css") }}"/>
+	
 	<link rel="stylesheet" href="{{ static_url("harvey.css") }}"/>
-	<title>Harvey: plays music</title>
+	
+	<script src="{{ static_url("materialize/jquery/jquery-3.2.1.min.js") }}"></script>
+	<script src="{{ static_url("materialize/js/materialize.min.js") }}"></script>
+	
+	<script src="{{ static_url("harvey.js") }}"></script>
+	
 </head>
 <body>
-	
-	<div id="header">
+	<div id="container" class="container">
+		<div id="header">
 		
-	</div>
+		</div>
 	
-	<div id="page">
-		{% block page %}
-        {% end %}
+		<div id="page">
+			{% block page %}
+       	 {% end %}
+        </div>
     </div>
 </body>
 </html>

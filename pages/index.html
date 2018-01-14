@@ -4,9 +4,12 @@
 
 {% if tracks %}
 	{% for track in tracks %}
+	<div class="">
 		<a href='/tracks/{{track.uri}}'>
 		<h3>{{ track.title }}</h3>
-		<p>{{ track.artist }}</p></a>
+		<p class="grey-text">by {{ track.artist }}</p>
+		</a><hr/>
+	</div>
 	{% end %}
 {% else %}
 <p>one moment, please...</p>
